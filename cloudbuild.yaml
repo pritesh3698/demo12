@@ -15,7 +15,7 @@ steps:
     - '-d'
     - '-r'
     - 'plugins'
-    - 'gs://gs://demo12trial/'
+    - 'gs://demo12trial/'
 #Logging
 options:
   logging: CLOUD_LOGGING_ONLY
