@@ -1,18 +1,22 @@
 steps:
-    - id: 'auth'
-      uses: 'google-github-actions'
-      with:
-        workload_identity_provider: 'projects/poc-dna-automation-693335/agentPools/demo12pool'
-        service_account: 'poc-dna-automation-693335@appspot.gserviceaccount.com'
-
-    - id: 'upload-folder'
-      uses: 'google-github-actions/upload-cloud-storage'
-      with:
-        path: 'demo12/'
-        destination: 'demo12trial'
-
-    # Example of using the output
-    - id: 'uploaded-files'
-      uses: 'foo/bar@main'
-      env:
-        files: '${{ steps.upload-folder.outputs.uploaded }}'
+- name: ubuntu
+- name: 'gcr.io/poc-dna-automation-693335/gcr_demo_pract1'
+  args:
+    - '-m'
+    - 'rsync'
+    - '-d'
+    - '-r'
+    - 'dags'
+    - 'gs://${_GCS_BUCKET}/dags'
+- name: 'gcr.io/poc-dna-automation-693335/gcr_demo_pract1'
+  args:
+    - '-m'
+    - 'rsync'
+    - '-d'
+    - '-r'
+    - 'plugins'
+    - 'gs://${_GCS_BUCKET}/plugins'
+#Logging
+options:
+  logging: CLOUD_LOGGING_ONLY
+#completed
