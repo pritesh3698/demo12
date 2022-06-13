@@ -6,8 +6,8 @@ steps:
     - 'rsync'
     - '-d'
     - '-r'
-    - 'dags'
-    - 'gs://${_GCS_BUCKET}/dags'
+    - './dags'
+  
 - name: 'gcr.io/poc-dna-automation-693335/bigquery-git'
   args:
     - '-m'
@@ -15,7 +15,7 @@ steps:
     - '-d'
     - '-r'
     - 'plugins'
-    - 'gs://${_GCS_BUCKET}/plugins'
+    - 'gs://gs://demo12trial/'
 #Logging
 options:
   logging: CLOUD_LOGGING_ONLY
