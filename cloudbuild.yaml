@@ -1,22 +1,19 @@
 steps:
 - name: ubuntu
-- name: 'gcr.io/poc-dna-automation-693335/bigquery-git'
+  args: ['bash', '-c', "echo '$COMMIT_SHA' > REVISION.txt"]
+- name: gcr.io/cloud-builders/gsutil
   args:
     - '-m'
     - 'rsync'
     - '-d'
     - '-r'
-    - './dags'
-  
-- name: 'gcr.io/poc-dna-automation-693335/bigquery-git'
+    - 'dags'
+    - 'gs://${_GCS_BUCKET}/dags'
+- name: gcr.io/cloud-builders/gsutil
   args:
     - '-m'
     - 'rsync'
     - '-d'
     - '-r'
     - 'plugins'
-    - 'gs://demo12trial/'
-#Logging
-options:
-  logging: CLOUD_LOGGING_ONLY
-#completed
+    - 'gs://${_GCS_BUCKET}/plugins'
