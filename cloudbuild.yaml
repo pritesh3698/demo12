@@ -12,7 +12,7 @@ steps:
 - name: 'gcr.io/cloud-builders/gsutil'
   args:
     - '-m'
-    - 'rsync ./dags gs://demo12trial/'
+    - 'gsutil rsync  ./dags gs://demo12trial/'
     - '-d'
     - '-r'
     - 'gs://${_GCS_BUCKET_1}./'
