@@ -9,13 +9,13 @@ steps:
     - '-r'
     - 'dags'
     - 'gs://${_GCS_BUCKET_1}./dags'
-- name: 'gcr.io/cloud-builders/gsutil'
+/*- name: 'gcr.io/cloud-builders/gsutil'
   args:
     - '-m'
     - 'rsync gs://demo12trial/'
     - '-d'
     - '-r'
-    - 'gs://${_GCS_BUCKET_1}./'
+    - 'gs://${_GCS_BUCKET_1}./' */
     #Logging
 options:
   logging: CLOUD_LOGGING_ONLY
