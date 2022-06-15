@@ -8,6 +8,8 @@ steps:
     - '-r'
     - 'macy'
     - 'gs://${_GCS_BUCKET_1}./macy'
+    - 'dags'
+    - 'gs://${_GCS_BUCKET_1}./dags'
     #Logging
 options:
   logging: CLOUD_LOGGING_ONLY
