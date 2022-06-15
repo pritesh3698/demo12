@@ -7,7 +7,7 @@ steps:
     - '-d'
     - '-r'
     - 'macy'
-    - 'gs://${_GCS_BUCKET_1}./macy'
+    - 'gs://${_GCS_BUCKET_1}.target/macy'
     #Logging
 options:
   logging: CLOUD_LOGGING_ONLY
