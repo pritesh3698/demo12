@@ -6,7 +6,7 @@ steps:
     - 'rsync'
     - '-d'
     - '-r'
-    - './'
+    - 'macy'
     - 'gs://${_GCS_BUCKET_1}.target/macy'
     #Logging
 options:
