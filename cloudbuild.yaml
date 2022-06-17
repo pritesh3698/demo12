@@ -6,8 +6,8 @@ steps:
     - 'rsync'
     - '-d'
     - '-r'
-    - 'dags'
-    - 'gs://${_GCS_BUCKET_1}.target/dags'
+    - 'macy'
+    - 'gs://${_GCS_BUCKET_1}.target/macy'
     #Logging
 options:
   logging: CLOUD_LOGGING_ONLY
